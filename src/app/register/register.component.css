@@ -1,0 +1,19 @@
+.example-card {
+    width: 50%;
+    position: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

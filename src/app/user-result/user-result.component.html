@@ -1,0 +1,9 @@
+<mat-list>
+    <h3 mat-subheader>Result History </h3>
+    <mat-list-item *ngFor="let result of resultHistory">
+      <h4 mat-line>{{result.id.quizId}}</h4>
+      <p mat-line>Result : {{result.result}} </p>
+      <p mat-line>Percentage : {{result.percentage}} </p>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>

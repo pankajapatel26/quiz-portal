@@ -1,0 +1,18 @@
+<div class="main-div">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let category of categories">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{category.catName}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{category.catDesc}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <p *ngFor="let q of category.quiz">
+        <button mat-raised-button color="primary" [routerLink]="['/quiz',q.quizId]">{{q.quizName}}</button>
+      </p>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

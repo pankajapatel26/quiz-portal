@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    
+  
+    <mat-toolbar-row>
+      <span>Quiz Portal</span>
+      <span class="example-spacer"></span>
+      <mat-icon class="example-icon" *ngIf="token">account_circle</mat-icon>
+      <span *ngIf="token">{{loggedInUser}}</span>
+      <button mat-raised-button color="primary" *ngIf="!token" [routerLink]="['/register']">REGISTER</button>
+      <button mat-raised-button color="primary" *ngIf="token" (click) = logout()>LOGOUT</button>
+    </mat-toolbar-row>
+  
+    
+  </mat-toolbar>
+<div>
+    <router-outlet></router-outlet>
+</div>

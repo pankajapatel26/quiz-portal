@@ -1,0 +1,28 @@
+<mat-list>
+  <h2 mat-subheader>Questions : <p>{{timeLeft}} Seconds Left....</p></h2>  
+  <mat-list-item *ngFor="let que of questions; let queIndex = index ;">
+    
+    <section class="example-section"><h4>{{queIndex + 1}}. {{que.questionDescription}} ? </h4></section>
+    <br>
+    <section class="example-section" *ngIf="que.questionType == 'MC'">
+      <mat-checkbox class="example-margin" (change)="onChange(que.questionId, 'CHOICE1', $event)" value="CHOICE1">{{que.choice1}}</mat-checkbox>
+      <mat-checkbox class="example-margin" (change)="onChange(que.questionId, 'CHOICE2', $event)" value="CHOICE2">{{que.choice2}}</mat-checkbox>
+      <mat-checkbox class="example-margin" (change)="onChange(que.questionId, 'CHOICE3', $event)" value="CHOICE3">{{que.choice3}}</mat-checkbox>
+      <mat-checkbox class="example-margin" (change)="onChange(que.questionId, 'CHOICE4', $event)" value="CHOICE4">{{que.choice4}}</mat-checkbox>
+    </section>
+
+    <section class="example-section" *ngIf="que.questionType == 'TF'">
+      <mat-radio-group [(ngModel)]="labelPosition" (change)="radioChange(que.questionId, $event)">
+        <mat-radio-button class="example-margin" value="CHOICE1">{{que.choice1}}</mat-radio-button>
+        <mat-radio-button class="example-margin" value="CHOICE2">{{que.choice2}}</mat-radio-button>
+      </mat-radio-group>
+    </section>
+  
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+      <button mat-raised-button (click)="submitQuiz()" color="primary">Submit</button>
+  </mat-list-item>
+  
+</mat-list>
+
